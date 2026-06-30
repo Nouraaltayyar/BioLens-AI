@@ -154,6 +154,7 @@ def img_to_b64(img_pil, max_size=512):
 
 def validate_and_route(img_pil):
     try:
+       OPENROUTER_API_KEY = st.secrets["OPENROUTER_API_KEY"]
         client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=OPENROUTER_API_KEY)
         prompt = ("Look at this image.\n1. Is it a plant leaf? YES or NO\n"
                   "2. If YES: is it tomato, potato, or pepper? Or other?\n"
