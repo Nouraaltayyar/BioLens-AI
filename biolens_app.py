@@ -182,7 +182,7 @@ def validate_and_route(img_pil):
 def gpt_analyze_other(img_pil):
     try:
         OPENROUTER_API_KEY = st.secrets["OPENAI_API_KEY"]
-        client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=OPENROUTER_API_KEY)
+        client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=OPENAI_API_KEY)
         prompt = ("Analyze this plant leaf. Reply EXACTLY:\nPLANT: common name\nSTATUS: Healthy or Diseased\n"
                   "DISEASE: disease name or None\nSEVERITY: low or moderate or high or critical\n"
                   "TIP1: first tip\nTIP2: second tip\nTIP3: third tip")
